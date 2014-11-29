@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.exception;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,11 +18,11 @@ package com.github.danielgrant.litejdbc.exception;
 @SuppressWarnings("serial")
 public abstract class DataAccessException extends RuntimeException {
 
-  public DataAccessException(String message) {
-    super(message);
-  }
+    public DataAccessException(String message) {
+        super(message);
+    }
 
-  public DataAccessException(String message, Throwable throwable) {
-    super(message, throwable);
-  }
+    public DataAccessException(String message, Throwable throwable) {
+        super(message, throwable);
+    }
 }

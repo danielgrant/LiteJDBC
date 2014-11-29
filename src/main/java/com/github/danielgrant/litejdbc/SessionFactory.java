@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,6 @@ package com.github.danielgrant.litejdbc;
 import java.sql.SQLException;
 
 public interface SessionFactory {
-  
-  public Session getDatabaseSession(String user, String password, String url, String driver)
-      throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException;
+
+    public Session getDatabaseSession(String user, String password, String url, String driver) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException;
 }

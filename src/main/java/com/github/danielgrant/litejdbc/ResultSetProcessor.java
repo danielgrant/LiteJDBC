@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,9 +16,10 @@ package com.github.danielgrant.litejdbc;
  */
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import com.github.danielgrant.litejdbc.exception.DataAccessSQLException;
 
 public interface ResultSetProcessor<T> {
-  
-  public T processResultSet(ResultSet resultSet) throws SQLException;
+
+    public T processResultSet(ResultSet resultSet) throws DataAccessSQLException;
 }

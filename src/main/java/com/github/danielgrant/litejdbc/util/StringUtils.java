@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.util;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,16 +17,16 @@ package com.github.danielgrant.litejdbc.util;
 
 public class StringUtils {
 
-  public static boolean isNotBlank(String str) {
+    public static boolean isNotBlank(String str) {
 
-    if (str != null && str.length() != 0) {
-      return true;
+        if (str != null && str.length() != 0) {
+            return true;
+        }
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isWhitespace(str.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
     }
-    for (int i = 0; i < str.length(); i++) {
-      if (!Character.isWhitespace(str.charAt(i))) {
-        return true;
-      }
-    }
-    return false;
-  }
 }

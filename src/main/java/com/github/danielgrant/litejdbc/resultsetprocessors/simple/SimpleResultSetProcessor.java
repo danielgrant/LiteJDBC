@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.resultsetprocessors.simple;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,19 +19,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.github.danielgrant.litejdbc.ResultSetProcessor;
+import com.github.danielgrant.litejdbc.exception.ExceptionTranslator;
 
 public class SimpleResultSetProcessor<T> implements ResultSetProcessor<T> {
-  
-  @Override
-  @SuppressWarnings("unchecked")
-  public T processResultSet(ResultSet resultSet) throws SQLException {
-    
-    Object object = resultSet.getObject(1);
 
-    if (object != null) {
-      return (T) object;
+    @Override
+    @SuppressWarnings("unchecked")
+    public T processResultSet(ResultSet resultSet) {
+
+        try {
+            Object object = resultSet.getObject(1);
+
+            if (object != null) {
+                return (T) object;
+            }
+        } catch (SQLException e) {
+            throw ExceptionTranslator.translateSQLException("SimpleResultSetProcessor.processResultSet()", e);
+        }
+
+        return null;
     }
-
-    return null;
-  }
 }

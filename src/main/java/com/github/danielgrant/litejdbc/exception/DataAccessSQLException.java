@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.exception;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,7 +20,7 @@ import java.sql.SQLException;
 @SuppressWarnings("serial")
 public class DataAccessSQLException extends DataAccessException {
 
-  public DataAccessSQLException(String task, SQLException sqlException) {
-    super(String.format("An exception occurred executing SQL task [%s]", task), sqlException);
-  }
+    public DataAccessSQLException(String task, SQLException sqlException) {
+        super(String.format("An exception occurred executing SQL task [%s]", task), sqlException);
+    }
 }

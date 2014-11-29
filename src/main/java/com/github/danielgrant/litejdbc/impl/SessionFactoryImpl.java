@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.impl;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,11 +21,10 @@ import com.github.danielgrant.litejdbc.Session;
 import com.github.danielgrant.litejdbc.SessionFactory;
 
 public class SessionFactoryImpl implements SessionFactory {
-  
-  @Override
-  public Session getDatabaseSession(String user, String password, String url, String driver)
-      throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-    Class.forName(driver).newInstance();
-    return new SessionImpl(user, password, url);
-  }
+
+    @Override
+    public Session getDatabaseSession(String user, String password, String url, String driver) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName(driver).newInstance();
+        return new SessionImpl(user, password, url);
+    }
 }

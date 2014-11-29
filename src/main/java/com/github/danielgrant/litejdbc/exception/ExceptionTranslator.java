@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.exception;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,13 +18,12 @@ package com.github.danielgrant.litejdbc.exception;
 import java.sql.SQLException;
 
 public class ExceptionTranslator {
-  
-  public static DataAccessException translateSQLException(String task, SQLException sqlException) {
-    return new DataAccessSQLException(task, sqlException);
-  }
 
-  public static DataAccessException translateReflectionException(String task, Class<?> clazz,
-      Exception exception) {
-    return new DataAccessReflectionException(task, clazz, exception);
-  }
+    public static DataAccessException translateSQLException(String task, SQLException sqlException) {
+        return new DataAccessSQLException(task, sqlException);
+    }
+
+    public static DataAccessException translateReflectionException(String task, Class<?> clazz, Exception exception) {
+        return new DataAccessReflectionException(task, clazz, exception);
+    }
 }

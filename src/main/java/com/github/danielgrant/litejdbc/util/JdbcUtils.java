@@ -1,7 +1,7 @@
 package com.github.danielgrant.litejdbc.util;
 
 /*
- * Copyright 2014 Daniel Grant
+ * Copyright 2014 LiteJDBC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,34 +21,34 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JdbcUtils {
-  
-  public static void closeConnection(Connection connection) {
-    if (connection != null) {
-      try {
-        connection.close();
-      } catch (SQLException e) {
-        // Do nothing
-      }
-    }
-  }
 
-  public static void closePreparedStatement(PreparedStatement preparedStatement) {
-    if (preparedStatement != null) {
-      try {
-        preparedStatement.close();
-      } catch (SQLException e) {
-        // Do nothing
-      }
+    public static void closeConnection(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                // Do nothing
+            }
+        }
     }
-  }
 
-  public static void closeResultSet(ResultSet resultSet) {
-    if (resultSet != null) {
-      try {
-        resultSet.close();
-      } catch (SQLException e) {
-        // Do nothing
-      }
+    public static void closePreparedStatement(PreparedStatement preparedStatement) {
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                // Do nothing
+            }
+        }
     }
-  }
+
+    public static void closeResultSet(ResultSet resultSet) {
+        if (resultSet != null) {
+            try {
+                resultSet.close();
+            } catch (SQLException e) {
+                // Do nothing
+            }
+        }
+    }
 }
